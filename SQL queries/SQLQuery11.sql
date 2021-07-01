@@ -1,0 +1,43 @@
+--Cleansing the DimProduct table
+SELECT [ProductKey]
+      --,[ProductAlternateKey]
+      ,[ProductSubcategoryKey]
+      --,[WeightUnitMeasureCode]
+      --,[SizeUnitMeasureCode]
+      ,[EnglishProductName] AS ProductName
+      --,[SpanishProductName]
+      --,[FrenchProductName]
+      --,[StandardCost]
+      --,[FinishedGoodsFlag]
+      ,[Color] AS Product_Color
+      --,[SafetyStockLevel]
+      --,[ReorderPoint]
+      --,[ListPrice]
+      ,[Size] AS Product_Size
+      --,[SizeRange]
+      --,[Weight]
+      --,[DaysToManufacture]
+      ,[ProductLine]
+      --,[DealerPrice]
+      --,[Class]
+      --,[Style]
+      ,[ModelName]
+      --,[LargePhoto]
+      --,[EnglishDescription]
+      --,[FrenchDescription]
+      --,[ChineseDescription]
+      --,[ArabicDescription]
+      --,[HebrewDescription]
+      --,[ThaiDescription]
+      --,[GermanDescription]
+      --,[JapaneseDescription]
+      --,[TurkishDescription]
+      ,[StartDate]
+      ,[EndDate]
+      ,[Status]
+	  ,[EnglishProductCategoryName] AS Category
+	  ,[EnglishProductSubcategoryName] AS Sub_Category
+  FROM [AdventureWorksDW2019].[dbo].[DimProduct]
+  LEFT JOIN [DimProductCategory] 
+  ON
+  [ProductKey] = [DimProductCategory].[ProductCategoryKey]
